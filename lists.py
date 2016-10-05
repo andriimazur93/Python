@@ -139,6 +139,14 @@ def combine(la, lb):
 #a nxm matrix.[MT]ij = [M]ji. Write a function that returns the
 #transpose of a matrix. 
 
+
+        
+    
+M = [[1,2,3], [4,5,6]]
+
+print(transpose(M))
+#print(transpose([[3]]))
+
 #T6Q20
 #Write a function combineList(list1, list2) that takes in two lists
 #as arguments and return a list that combines all the elements in
