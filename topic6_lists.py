@@ -139,13 +139,23 @@ def combine(la, lb):
 #a nxm matrix.[MT]ij = [M]ji. Write a function that returns the
 #transpose of a matrix. 
 
-
-        
+def transpose(matrix):
+    return map(list, zip(*matrix))
     
-M = [[1,2,3], [4,5,6]]
+#T6Q19
+#Write a function calCumulativeSum(numbers) that takes in a list of
+#numbers as argument and returns the cumulative sum of the list. That
+#is, the new list where the i element is the sum of the first i + 1
+#elements from the original list. For example, the cumulative sum of
+#[1, 2, 3] is [1, 3, 6]. 
 
-print(transpose(M))
-#print(transpose([[3]]))
+def calCumulativeSum(numbers):
+    result_list = []
+    i = 0
+    while(i<=len(numbers)-1):
+        result_list.append((sum(numbers[j] for j in range(0,i+1))))
+        i+=1
+    return result_list
 
 #T6Q20
 #Write a function combineList(list1, list2) that takes in two lists
@@ -169,6 +179,26 @@ def subtractList(list1, list2):
         if i not in list2:
            new_list.append(i)
     return new_list
+
+#T6Q22
+#Write a function countLetters(word) that takes in a word as argument
+#and returns a list that counts the number of times each letter appears.
+#The letters must be sorted in alphabetical order. 
+
+##def countLetters(word):
+##    from collections import Counter
+##    return Counter(word)
+
+def countLetters(word):
+    letter = []
+    cnt = []
+    for c in sorted(word):
+        if c not in letter:
+            letter.append(c)
+            cnt.append(1)
+        else:
+            cnt[-1] += 1
+    return zip(letter, cnt)
 
 #T6Q23
 #Write a function getNumbers(number) that takes in a number as argument

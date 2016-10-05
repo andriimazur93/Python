@@ -171,15 +171,3 @@ def pascal(row, col):
     else:
         return pascal(row-1,col-1) + pascal(row-1, col)
 
-def time12hr(time):
-    hours = int(time[0:2])
-    minutes = int(time[2:])
-    #print(minutes)
-    #return True
-    if(hours>12):
-        return '%02d' %(hours-12) + ':' + '%02d' %(minutes)+' p.m.'
-    return '%02d' %(hours+12) + ':' + '%02d' %(minutes)+ ' a.m.'
-
-print(time12hr('1619'))
-
-

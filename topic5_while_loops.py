@@ -122,35 +122,65 @@ def piApprox(num):
 #by an Indian Mathematician Srinivasa Ramanujan. It should use a while loop to compute the terms
 #of the summation until the last item is smaller than 1e -15.
 
-import math
-
-def series_term(k):
-    a=factorial(4*k)
-    b=(1103+26390*k)
-    c=factorial(k)
-    d=c**4
-    e=396**(4*k)
-    return float(a*b)/(d*e)
-
 def estimatePi():
-    k=0
-    final=0
-    while True:
-        term = series_term(k)
-        final += term
-        if term < 1.0e-15:
-            break
-        else:
-            k += 1
-    f=2*math.sqrt(2)/9801 # compute this only once
-    pi = 1.0/(final * f)
-    return pi
+        import math
+        def factorial(n):
+            if n == 0:
+                return 1
+            else:
+                return n * factorial(n-1) 
+                    
+        def series_term(k):
+                a=factorial(4*k)
+                b=(1103+26390*k)
+                c=factorial(k)
+                d=c**4
+                e=396**(4*k)
+                return float(a*b)/(d*e)
+                
+        k=0
+        final=0
+        while True:
+            term = series_term(k)
+            final += term
+            if term < 1.0e-15:
+                break
+            else:
+                k += 1
+            f=2*math.sqrt(2)/9801        
+            pi = 1.0/(final * f)
+        return pi
 
 #T5Q12
 #Given a positive integer, write a function that computes the prime factors that can be multplied
 #together to get back the same integer. 
 
+def primeFactorization(num):
+    result = []
+    while(num != 1):
+        for i in range(2, num):
+            while(num % i == 0):
+                result.append(i)
+                num = num / i
+                print(i)
+                #i = 2
+    return result
+
 #T5Q13
 #The smallest common multiple of two or more numbers is called the lowest common multiple (LCM).
 #Given a list of integers, find the lowest common multiple. 
+
+def LCM(nums):
+    result = 1
+    for i in nums:
+        result *= i
+
+
+
+
+
+
+
+
+
     
