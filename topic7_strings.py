@@ -145,6 +145,12 @@ def isReverse(word1, word2):
         j-=1
     return True
 
+def isReverse(word1, word2):
+    if word1 == word2[::-1]:
+        return (True)
+    else:
+        return (False)    
+
 #T7Q14
 #Write the function startWithVowel(word) that takes in a word as argument and returns a substring that starts
 #with the first vowel found in the word. The function returns 'No vowel' if the word does not contain vowel. 
