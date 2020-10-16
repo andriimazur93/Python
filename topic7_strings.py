@@ -128,6 +128,11 @@ def reverseWord(word):
         rev=i+rev
     return rev
 
+def reverseWord(word):
+    return rev[::-1]
+
+
+
 #T7Q13
 #Write the function isReverse(word1, word2) that takes two words as arguments and returns True is the
 #second word is the reverse of the first word. 
