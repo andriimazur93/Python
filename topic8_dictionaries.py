@@ -55,6 +55,15 @@ def countLetters2(word):
         dict[i] = b
     return dict
 
+#a simper way to do so
+def countLetters(word):
+    res = {}
+    for i in word:
+        res.setdefault(i,0)
+        res[i] += 1
+    
+    return(res)  
+
 #T8Q8
 #Write a function reverseLookup(dictionary, value) that takes in a dictionary
 #and a value as arguments and returns a sorted list of all keys that contains
