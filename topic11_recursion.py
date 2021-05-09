@@ -117,7 +117,7 @@ def numbersInbetween(a, b):
     if a == b:
         return '%d' %a
     else:
-        return  '%s %s' % (a,numbersInbetween(a+1,b))
+        return  str(a)+','+numbersInbetween(a+1,b)
 
 #T11Q11
 #Write a function createStars(num) that takes in a number as argument and returns
